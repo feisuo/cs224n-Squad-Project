@@ -18,6 +18,7 @@ import zipfile
 import argparse
 import os
 from squad_preprocess import maybe_download
+from squad_preprocess import nltk_download
 
 def setup_args():
     parser = argparse.ArgumentParser()
@@ -30,7 +31,7 @@ def main():
     glove_base_url = "http://nlp.stanford.edu/data/"
     glove_filename = "glove.6B.zip"
 
-    print ("\nDownloading wordvecs to {}".format(args.download_dir))
+    print("\nDownloading wordvecs to {}".format(args.download_dir))
 
     if not os.path.exists(args.download_dir):
         os.makedirs(args.download_dir)
@@ -40,6 +41,8 @@ def main():
 
     glove_zip_ref.extractall(args.download_dir)
     glove_zip_ref.close()
+
+    nltk_download()
 
 
 if __name__ == '__main__':
