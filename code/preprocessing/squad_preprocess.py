@@ -28,7 +28,7 @@ import importlib
 
 # reload(sys)
 importlib.reload(sys)
-sys.setdefaultencoding('utf8')
+# sys.setdefaultencoding('utf8')
 random.seed(42)
 np.random.seed(42)
 
