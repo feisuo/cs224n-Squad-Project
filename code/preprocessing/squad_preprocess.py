@@ -24,8 +24,10 @@ import numpy as np
 from numpy.compat import unicode
 from tqdm import tqdm
 from six.moves.urllib.request import urlretrieve
+import importlib
 
-reload(sys)
+# reload(sys)
+importlib.reload(sys)
 sys.setdefaultencoding('utf8')
 random.seed(42)
 np.random.seed(42)
